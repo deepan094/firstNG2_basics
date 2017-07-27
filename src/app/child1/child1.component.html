@@ -1,0 +1,24 @@
+<p>
+  child1 works!
+</p>
+<button type="button" class="btn btn-default" (click) = "emitToParent()" >Emit to parent</button>
+<div class="container">
+  <div class="row">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Driver</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let item of parentObj;let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{item.Driver}}</td>
+            <td>{{item.Country}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
