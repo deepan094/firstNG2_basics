@@ -12,6 +12,8 @@ import { RouterCompo1Component } from './router-compo1/router-compo1.component';
 import { appRoute } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { RouterCompo3Component } from './router-compo3/router-compo3.component';
+import { Route11Component } from './route1-1/route1-1.component';
+import { emptyCompo } from "./app.emptyCompo";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RouterCompo3Component } from './router-compo3/router-compo3.component';
     Child1Component,
     RouterCompo2Component,
     RouterCompo1Component,
-    RouterCompo3Component
+    RouterCompo3Component,
+    Route11Component,
+    emptyCompo
   ],
   imports: [
     BrowserModule,

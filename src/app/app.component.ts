@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UtilityService } from "./Services/app.UtilityService";
 import { HttpHelperService } from './Services/http-service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,18 @@ export class AppComponent {
 
   getOutput : any;
   isShowDrivers = false;
-  constructor( private _UtilityService:UtilityService , private _HttpServiceService:HttpHelperService){
+  constructor( 
+    private _Router : Router,
+    private _UtilityService:UtilityService , 
+    private _HttpServiceService:HttpHelperService){
     
   }
   handleChildData($e){
     alert($e);
   }
-
+  Router_3Go(){
+    this._Router.navigate(['/router3']);
+  }
   getData(){
     this._HttpServiceService.getHttpData("http://date.jsontest.com/")
       .subscribe(
