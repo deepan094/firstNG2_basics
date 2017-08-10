@@ -14,16 +14,20 @@ import { RouterModule } from '@angular/router';
 import { RouterCompo3Component } from './router-compo3/router-compo3.component';
 import { Route11Component } from './route1-1/route1-1.component';
 import { emptyCompo } from "./app.emptyCompo";
+import { ParentComponent } from './app.parent';
+import { SignUpComponent } from './sign-up/sign-up.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    ParentComponent,
     Child1Component,
     RouterCompo2Component,
     RouterCompo1Component,
     RouterCompo3Component,
     Route11Component,
-    emptyCompo
+    emptyCompo,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

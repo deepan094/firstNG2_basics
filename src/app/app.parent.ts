@@ -6,12 +6,11 @@ import { Child1Component } from './child1/child1.component'
 import { xyClass } from './app.child'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-parent',
+  templateUrl: './app.parent.html'
   //providers: [Child1Component]
 })
-export class AppComponent {
+export class ParentComponent {
   changeData: { "Driver": string; "Country": string; };
   @ViewChild(Child1Component) aa:Child1Component;
   

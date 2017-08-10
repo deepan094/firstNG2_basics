@@ -4,8 +4,23 @@ import { RouterCompo2Component } from './router-compo2/router-compo2.component';
 import { RouterCompo3Component } from "./router-compo3/router-compo3.component";
 import { Route11Component } from "./route1-1/route1-1.component";
 import { emptyCompo } from "./app.emptyCompo";
+import { ParentComponent } from './app.parent'
+import { SignUpComponent } from './sign-up/sign-up.component'
 
 export const appRoute : Routes = [
+     {
+    path: '',
+    redirectTo: "signup",
+    pathMatch: 'full'
+  },
+    {
+        path:'home',
+        component:ParentComponent
+    },
+    {
+        path:'signup',
+        component:SignUpComponent
+    },
     {
         path:'router1',
         component:RouterCompo1Component,

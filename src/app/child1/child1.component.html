@@ -2,6 +2,7 @@
   child1 works!
 </p>
 <button type="button" class="btn btn-default" (click) = "emitToParent()" >Emit to parent</button>
+<br>
 <div class="container">
   <div class="row">
       <table class="table table-bordered">
@@ -17,6 +18,7 @@
             <td>{{i+1}}</td>
             <td>{{item.Driver}}</td>
             <td>{{item.Country}}</td>
+            <td style="cursor:pointer;color:red" (click) = deleteMe(i) > ( X ) </td>
           </tr>
         </tbody>
       </table>

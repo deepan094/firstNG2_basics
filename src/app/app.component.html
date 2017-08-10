@@ -1,52 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  
+ <a routerLink="/home">Home</a> ||
+ <a routerLink="/signup">SignUp</a> ||
  <a routerLink="/router1">Router_1</a> || 
  <a routerLink="/router2">Router_2</a> || 
  <a routerLink="/router3">Router_3</a>
   <router-outlet>
 
   </router-outlet>
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  
-  <button 
-    type="button" 
-    class="btn btn-primary"
-    (click) = "getData()"
-   >
-    Get Data Generic
-  </button>
-
-  <button 
-    type="button" 
-    class="btn btn-primary"
-    (click) = "showDrivers()"
-    *ngIf = "!isShowDrivers">
-    Show Drivers List
-  </button>
-  <button 
-    type="button" 
-    class="btn btn-primary"
-    (click) = "showDrivers()"
-    *ngIf = "isShowDrivers">
-    Hide Drivers List
-  </button>
-  <button 
-    type="button" 
-    class="btn btn-info"
-    (click) = "Router_3Go()">
-    Directly Route to 'Router_3'
-  </button>
-
-
-<!-- Child1 Component -->
-  <app-child1
-    (childData) = "handleChildData($event)" 
-    [parentObj] = "mainData"
-    *ngIf = "isShowDrivers" 
-  >
-  </app-child1>
 </div>
 
 
