@@ -15,7 +15,9 @@ import { RouterCompo3Component } from './router-compo3/router-compo3.component';
 import { Route11Component } from './route1-1/route1-1.component';
 import { emptyCompo } from "./app.emptyCompo";
 import { ParentComponent } from './app.parent';
-import { SignUpComponent } from './sign-up/sign-up.component'
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component'
+import { CanActivateTest } from "./app.loginAuth";
 
 @NgModule({
   declarations: [
@@ -27,14 +29,15 @@ import { SignUpComponent } from './sign-up/sign-up.component'
     RouterCompo3Component,
     Route11Component,
     emptyCompo,
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(appRoute)
   ],
-  providers: [UtilityService, HttpHelperService],
+  providers: [UtilityService, HttpHelperService ,CanActivateTest],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

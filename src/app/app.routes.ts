@@ -6,16 +6,23 @@ import { Route11Component } from "./route1-1/route1-1.component";
 import { emptyCompo } from "./app.emptyCompo";
 import { ParentComponent } from './app.parent'
 import { SignUpComponent } from './sign-up/sign-up.component'
+import { LoginComponent } from './login/login.component'
+import { CanActivateTest } from "./app.loginAuth";
 
 export const appRoute : Routes = [
      {
     path: '',
-    redirectTo: "signup",
+    redirectTo: "login",
     pathMatch: 'full'
   },
+{
+        path:'login',
+        component:LoginComponent
+    },
     {
         path:'home',
-        component:ParentComponent
+        component:ParentComponent,
+        canActivate:[CanActivateTest]
     },
     {
         path:'signup',
