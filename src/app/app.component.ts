@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
+import { UtilityService } from "./Services/app.UtilityService";
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,9 @@ import { Router } from '@angular/router'
   //providers: [Child1Component]
 })
 export class AppComponent {
- 
+  constructor(public _UtilityService:UtilityService){}
+  
+  ngOnInit(){
+  }
+
 }

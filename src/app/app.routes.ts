@@ -31,6 +31,7 @@ export const appRoute : Routes = [
     {
         path:'router1',
         component:RouterCompo1Component,
+        canActivate:[CanActivateTest],
         children:[
         //{
         //    path:'',
@@ -43,10 +44,12 @@ export const appRoute : Routes = [
     },
     {
         path:'router2',
-        component:RouterCompo2Component
+        component:RouterCompo2Component,
+        canActivate:[CanActivateTest]
     },
     {
         path:'router3',
-        component:RouterCompo3Component
+        component:RouterCompo3Component,
+        canActivate:[CanActivateTest]
     }
 ]; 

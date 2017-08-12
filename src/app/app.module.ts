@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/Http';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { Child1Component } from './child1/child1.component';
 import { UtilityService } from './Services/app.UtilityService';
@@ -35,6 +35,7 @@ import { CanActivateTest } from "./app.loginAuth";
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(appRoute)
   ],
   providers: [UtilityService, HttpHelperService ,CanActivateTest],
