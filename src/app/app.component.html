@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  
- <a routerLink="/home">Home</a> ||
+ <a routerLink="/home" >Home</a> ||
  <a routerLink="/router1">Router_1</a> || 
  <a routerLink="/router2">Router_2</a> || 
  <a routerLink="/router3">Router_3</a> || 
- <a routerLink="/login">Login</a>
+ <a routerLink="/login" *ngIf="!_UtilityService.isLoggedIn()" >Login</a> || 
+ <a routerLink="/logout" *ngIf="_UtilityService.isLoggedIn()">Logout</a>
   <router-outlet>
 
   </router-outlet>

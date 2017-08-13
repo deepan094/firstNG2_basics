@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UtilityService {
+    currentUser: any;
     storeValue: any;
     getLocal:any;
 
@@ -13,10 +14,24 @@ export class UtilityService {
         return this.storeValue;
     }
 
-    isValidUser(){
-        //localstorg.cu
+     isLoggedIn(): boolean {
+        try {
+            const theUser:any = JSON.parse(localStorage.getItem('currentCredential'));
+            if (theUser) {
+                this.currentUser = theUser;
+            }
+        } catch (e) {
+            return false;
+        }
+        
+        return !!this.currentUser;
     }
     
+    logout(): void {
+        this.currentUser = "";
+        localStorage.removeItem('currentCredential');
+    }
+
     setLocalStorageValue(lsName, val){
         let storageArray = [];
         storageArray.push(val);

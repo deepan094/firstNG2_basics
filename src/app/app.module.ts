@@ -18,6 +18,7 @@ import { ParentComponent } from './app.parent';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component'
 import { CanActivateTest } from "./app.loginAuth";
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CanActivateTest } from "./app.loginAuth";
     Route11Component,
     emptyCompo,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

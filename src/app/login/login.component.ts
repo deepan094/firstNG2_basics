@@ -15,12 +15,17 @@ export class LoginComponent implements OnInit {
   constructor(private _route:Router ,private _UtilityService:UtilityService) { }
 
   validateLogin(){
-    this._UtilityService.getLocalStorageValue('intialData').forEach(obj => {
+    if(this._UtilityService.getLocalStorageValue('intialData') !== null){
+       this._UtilityService.getLocalStorageValue('intialData').forEach(obj => {
         if(obj.name === this.userName && obj.password === this.passWord){ 
           this._UtilityService.setLocalStorageValue('currentCredential',{'name':this.userName , 'password':this.passWord});
           this._route.navigate(['home']);
         }
-    });    
+        else{
+          alert('Username || Password is incorrect !');
+        }
+    });
+    }
   }
 
   signUpRedirect(){

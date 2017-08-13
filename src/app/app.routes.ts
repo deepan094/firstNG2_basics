@@ -8,6 +8,7 @@ import { ParentComponent } from './app.parent'
 import { SignUpComponent } from './sign-up/sign-up.component'
 import { LoginComponent } from './login/login.component'
 import { CanActivateTest } from "./app.loginAuth";
+import { LogoutComponent } from './logout/logout.component'
 
 export const appRoute : Routes = [
      {
@@ -15,7 +16,11 @@ export const appRoute : Routes = [
     redirectTo: "login",
     pathMatch: 'full'
   },
-{
+    {
+        path:'logout',
+        component:LogoutComponent
+    },
+    {
         path:'login',
         component:LoginComponent
     },
