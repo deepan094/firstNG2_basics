@@ -19,6 +19,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component'
 import { CanActivateTest } from "./app.loginAuth";
 import { LogoutComponent } from './logout/logout.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LogoutComponent } from './logout/logout.component';
     emptyCompo,
     SignUpComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

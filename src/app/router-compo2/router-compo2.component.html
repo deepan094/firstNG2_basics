@@ -1,3 +1,32 @@
-<p>
-  router-compo2 works!
-</p>
+
+<div class="btn-group">
+  <button
+      (click)="toggle()" data-toggle="dropdown"
+      type="button" class="btn btn-default dropdown-toggle">
+     {{trueValue}} options selected <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu-multi" [hidden]="!showOptions">
+  <li>
+    <span class="text-input-wrapper">
+    <input (keyup)= "onkeyup()" placeholder="Enter Text" size="13" type="text" [(ngModel)] = "txtModel" />
+    <span title="Clear" (click) = "clearBtnClick()" id="clearBtn">&#10006;</span>
+    </span>
+  </li>
+    <li>
+      <label class="selectAllLi">
+        <input  type="checkbox" (click)="toggleAll()" [(ngModel)]="isAllSelected">Select / Deselect all
+      </label>
+    </li>  
+    <li *ngFor = "let option of newOptions | searchFilter: 'value' : txtModel ; let i = index">
+       <label class="multiTextLabel">
+        <input type="checkbox" [(ngModel)]="option.selected" (change)="optionToggled(option)" />
+        <span>{{option.value}}</span><br/>
+      </label>
+    </li>
+  </ul>
+</div>
+<br><br><br>
+{{selectedModel | json}}
+<br><br><br>
+  {{newOptions | json}} 
+
