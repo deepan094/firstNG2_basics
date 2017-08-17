@@ -1,38 +1,80 @@
-<div  class="mTop20  container">
+<div class="mTop20  container">
     <div class="row">
         <div class="centerMe col-xs-12 col-sm-12 col-md-4 well well-sm">
             <legend><a href="#"><i class="glyphicon glyphicon-globe"></i></a> Sign up!</legend>
-            <form  class="form" role="form">
-            <div class="row">
-                <div class="col-xs-6 col-md-6">
-                    <input class="form-control" name="firstname" placeholder="First Name" type="text"
-                       required autofocus />
+            <form action="#" method="post" #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <input id="firstName" name="firstName" class="form-control" required ngModel #firstName="ngModel" placeholder="First Name"
+                            type="text" />
+
+                        <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+                            <div class="alert alert-danger" *ngIf="firstName.errors.required && firstName.dirty">
+                                Name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-md-6">
+                        <input id="lastName" name="lastName" class="form-control" required ngModel #lastName="ngModel" placeholder="Last Name" type="text"
+                        />
+
+                        <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+                            <div class="alert alert-danger" *ngIf="lastName.errors.required && lastName.dirty">
+                                Last Name is required.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-md-6">
-                    <input class="form-control" [(ngModel)]="signUp_username" name="username" placeholder="User Name" type="text"  />
+                <div>
+                    <input id="email" name="email" class="form-control" required ngModel #email="ngModel" placeholder="Enter your email" type="text"
+                    />
+
+                    <div *ngIf="email.errors && (email.dirty || email.touched)">
+                        <div class="alert alert-danger" *ngIf="email.errors.required && email.dirty">
+                            Email is required.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <input class="form-control" name="youremail" placeholder="Your Email" type="email" />
-            <input class="form-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
-            <input class="form-control" name="password" [(ngModel)]="signUp_password" placeholder="New Password" type="password" />
-            <label for="">
-                Birth Date</label>
-            <div class="row">
-                <div class="col-xs-4 col-md-4">
-                  <input type="date" name="sex" id="inlineCheckbox1" value="male" />
+                <div>
+                    <input id="re_email" name="re_email" class="form-control" required ngModel #re_email="ngModel" placeholder="Re-Enter your email"
+                        type="text" />
+
+                    <div *ngIf="re_email.errors && (re_email.dirty || re_email.touched)">
+                        <div class="alert alert-danger" *ngIf="re_email.errors.required && re_email.dirty">
+                            Email is required.
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <label class="radio-inline">
+                <div>
+                    <input id="password" name="password" class="form-control" required ngModel #password="ngModel" placeholder="Password" type="text"
+                    />
+
+                    <div *ngIf="password.errors && (password.dirty || password.touched)">
+                        <div class="alert alert-danger" *ngIf="password.errors.required && password.dirty">
+                            Password is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="gender">
+                Birth Date</label></div>
+                    <div class="col-md-9">
+                        <input class="form-control" type="date" name="gender" id="gender" />
+                    </div>
+                </div>
+                <label class="radio-inline">
                 <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
                 Male
             </label>
-            <label class="radio-inline">
+                <label class="radio-inline">
                 <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
                 Female
             </label>
-            <br />
-            <br />
-            <button (click)="signUpbtnClick()" class="btn btn-lg btn-primary btn-block" type="submit">
+                <br />
+                <br />
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
                 Sign up</button>
             </form>
         </div>

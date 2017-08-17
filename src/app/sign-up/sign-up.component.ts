@@ -1,28 +1,41 @@
+import { User } from './User';
 import { Component, OnInit } from '@angular/core';
-import { UtilityService } from "../Services/app.UtilityService";
-import { Router } from "@angular/router";
-
+import { AppModule } from './../app.module';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  signUp_username: any;
-  signUp_password: any;
 
-  constructor(private _UtilityService:UtilityService, private _route:Router) { }
+  public user: User;
 
-  signUpbtnClick(){
-    if(this.signUp_username !== undefined){
-    this._UtilityService.setLocalStorageValue('intialData', {'name':this.signUp_username ,'password':this.signUp_password});
+  onSubmit(signForm: NgForm) {
+    if (signForm.invalid) {
+      signForm.reset();
+      return;
     }
-    this._route.navigate(['login']);
+    alert('inside the controller!!!');
+    console.log('form is valid: ' + signForm.valid);
+    console.log(signForm.value);
+
   }
 
-  ngOnInit() {
+  constructor() { }
 
+  ngOnInit() {
+    this.user = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      re_email: '',
+      password: '',
+      confirmPassword: '',
+      DOB: null,
+      gender: ''
+    };
   }
 
 }
