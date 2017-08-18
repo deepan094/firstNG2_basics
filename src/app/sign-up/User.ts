@@ -5,6 +5,6 @@ export interface User {
     re_email: string;
     password: string;
     confirmPassword: string;
-    DOB: Date;
+    dob: Date;
     gender: string;
 }

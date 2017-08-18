@@ -1,14 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
- <a routerLink="/home" >Home</a> ||
- <a routerLink="/router1">Router_1</a> || 
- <a routerLink="/router2">Router_2</a> || 
- <a routerLink="/router3">Router_3</a> || 
- <a routerLink="/login" *ngIf="!_UtilityService.isLoggedIn()" >Login</a> || 
- <a routerLink="/logout" *ngIf="_UtilityService.isLoggedIn()">Logout</a>
+  <div class="container">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" [routerLink]="['/home']" >Home</a>
+      <a class="navbar-brand" [routerLink]="['/router1']">Router_1</a>
+      <a class="navbar-brand" [routerLink]="['/router2']">Router_2</a>
+      <a class="navbar-brand" [routerLink]="['/router3']">Router_3</a>
+      <a class="navbar-brand" [routerLink]="['/login']" *ngIf="!_UtilityService.isLoggedIn()">Login</a>
+      <a class="navbar-brand" [routerLink]="['/logout']" *ngIf="_UtilityService.isLoggedIn()">Logout</a>
+    </nav>
+  </div>
   <router-outlet>
 
   </router-outlet>
 </div>
-
-

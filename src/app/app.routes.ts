@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { RouterCompo1Component } from './router-compo1/router-compo1.component';
-import { RouterCompo2Component } from './router-compo2/router-compo2.component'; 
+import { RouterCompo2Component } from './router-compo2/router-compo2.component';
 import { RouterCompo3Component } from "./router-compo3/router-compo3.component";
 import { Route11Component } from "./route1-1/route1-1.component";
 import { emptyCompo } from "./app.emptyCompo";
@@ -10,51 +11,51 @@ import { LoginComponent } from './login/login.component'
 import { CanActivateTest } from "./app.loginAuth";
 import { LogoutComponent } from './logout/logout.component'
 
-export const appRoute : Routes = [
-     {
-    path: '',
-    redirectTo: "login",
-    pathMatch: 'full'
-  },
+export const appRoute: Routes = [
     {
-        path:'logout',
-        component:LogoutComponent
+        path: '',
+        redirectTo: "login",
+        pathMatch: 'full'
     },
     {
-        path:'login',
-        component:LoginComponent
+        path: 'logout',
+        component: LogoutComponent
     },
     {
-        path:'home',
-        component:ParentComponent,
-        canActivate:[CanActivateTest]
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path:'signup',
-        component:SignUpComponent
+        path: 'home',
+        component: ParentComponent,
+        canActivate: [CanActivateTest]
     },
     {
-        path:'router1',
-        component:RouterCompo1Component,
-        canActivate:[CanActivateTest],
-        children:[
-        //{
-        //    path:'',
-        //    component:emptyCompo
-        //},
-        {
-            path:'router/:id',
-            component:Route11Component
-        }]
+        path: 'signup',
+        component: SignUpComponent
     },
     {
-        path:'router2',
-        component:RouterCompo2Component,
-        canActivate:[CanActivateTest]
+        path: 'router1',
+        component: RouterCompo1Component,
+        canActivate: [CanActivateTest],
+        children: [
+            //{
+            //    path:'',
+            //    component:emptyCompo
+            //},
+            {
+                path: 'router/:id',
+                component: Route11Component
+            }]
     },
     {
-        path:'router3',
-        component:RouterCompo3Component,
-        canActivate:[CanActivateTest]
+        path: 'router2',
+        component: RouterCompo2Component,
+        canActivate: [CanActivateTest]
+    },
+    {
+        path: 'router3',
+        component: RouterCompo3Component,
+        canActivate: [CanActivateTest]
     }
 ]; 

@@ -8,7 +8,7 @@ import { UtilityService } from './Services/app.UtilityService';
 import { HttpHelperService } from './Services/http-service';
 import { RouterCompo2Component } from './router-compo2/router-compo2.component';
 import { RouterCompo1Component } from './router-compo1/router-compo1.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { appRoute } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { RouterCompo3Component } from './router-compo3/router-compo3.component';
@@ -32,10 +32,11 @@ import { LogoutComponent } from './logout/logout.component';
     emptyCompo,
     SignUpComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoute)
